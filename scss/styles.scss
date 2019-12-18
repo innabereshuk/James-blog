@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Lora:400,700|Muli:400,700&display=swap');
 
-// @import 'normalize';
+@import 'normalize';
 @import 'variables';
 @import 'mixins';
 
@@ -16,17 +16,13 @@ html {
 body {
     min-height: 100%;
     margin: 0;
+    font-family: 'Lora', serif;
+    font-family: 'Muli', sans-serif;
     font-family: 'Dancing Script', cursive;
-    font-family: 'Fredoka One', cursive;
     position: relative;
-    font-weight: 400;
-    letter-spacing: 1.2;
-    font-size: 1.6rem;
+    @include font(1.4rem, $text-color,  400,  'Lora', 1.6rem);
 }
 
-a, button {
-    transition: all .4s ease-in;
-}
 
 .container {
     max-width: 1140px;
@@ -66,7 +62,7 @@ a, button {
     &__child {
         display: none;
         background: transparent;
-        border: 1px solid $brend-color;
+        border: 1px solid $menu-color;
         min-width: 200px;
         position: absolute;
         &--link {
@@ -74,11 +70,12 @@ a, button {
             outline: none;
             display: block;
             @include tr;
-             height: 50px;
-            border-bottom: $b-size solid $brend-color;
+            height: 50px;
+            border-bottom: $b-size solid $menu-color;
+            @include font(1.4rem, $menu-color, 400, $text-ff, 1.6);
             padding: 15px;
             text-align: center;
-            color: $brend-color;
+            color: $menu-color;
             font-weight: 400;
             font-family: 'Dancing Script';
             text-transform: uppercase;
@@ -95,15 +92,15 @@ a, button {
 .menu__btn:hover, 
 .menu__btn:focus,
 .menu__btn:active {
-        border: $b-size solid $brend-color;
-        box-shadow: 0 0 7px $brend-color;
+        border: $b-size solid $menu-color;
+        box-shadow: 0 0 7px $menu-color;
 }
 
 .menu__btn:hover:after, 
 .menu__btn:focus:after,
 .menu__btn:active:after {
     content: '\2630';
-    color: $brend-color;;
+    color: $menu-color;;
     @include hover;
 }
 
@@ -117,9 +114,9 @@ a, button {
 .fas:hover,
 .fas:focus,
 .fas:active {
-    color: $brend-color;
+    color: $menu-color;
     @include hover;
-    text-shadow: 0 0 7px $brend-color;
+    text-shadow: 0 0 7px $menu-color;
 }
 
 
@@ -141,14 +138,12 @@ a, button {
             display: grid;
             grid-column: 1 / 3;
             grid-row: 3 / 5;
-            // grid-template-columns: repeat(2, auto);
-            // grid-template-rows: subgrid;
             background:white;
         }
         &--pos-2 {
             grid-column: 3 / 5;
             grid-row: 3 / 5;
-            background: rgb(199, 197, 70);
+            background: rgb(226, 130, 130);
         }
         &--pos-3 {
             grid-column: 1 / 3;
@@ -169,25 +164,32 @@ a, button {
             &__sub2 {
                 grid-column: 3 / 5;
                 grid-row: 1 / 3;
-                @include textCenter;
-                &:after {
-                     content: '\003C';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                     &:before {
+                     content: '\1F780';
                      color: rgb(255, 255, 255);
-                     transform: translate(-233px, 0);
-                     font-size: 80px;
-                     z-index: 2;
-                }
+                     transform: translate(-132px, 0);
+                     font-size: 140px;
+                     position: absolute;
+                   
+                    }
             }
             &__sub3 {
                 grid-column: 1 / 3;
                 grid-row: 3 / 5;
-                @include textCenter;
-                &:after {
-                    content: '\003E';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                    &:after {
+                    content: '\1F782';
                     color: rgb(255, 255, 255);
-                    transform: translate(43px, 0);
-                    font-size: 80px;
+                    transform: translate(132px, 0);
+                    font-size: 140px;
+                    position: absolute;
                     z-index: 2;
+                   
                }
             }
             &__sub4 {
@@ -220,37 +222,8 @@ a, button {
         }
 
     }
-
-
-
-// .article {
-//     width: 550px;
-//     height: 550px;
-//     display: flex;
-//      flex-direction: column;
-//        &__poster {
-//         width: 50%;
-//         display: flex;
-//          height: 50%;
-//         &__text {
-//             display: flex;
-//             align-items: center;
-//             padding-left: 80px;
-//          }
-//        }
-      
-//        & img {
-//            width: calc(550px / 2);
-//            height: calc(550px / 2);
-//            background-size: cover;
-//            background-position: center;
-
-//        }
-       
-//     }
-           
-   
-
+     
+ 
 .title {
     text-align: center;
     font-family: 'Dancing Script', cursive;
@@ -258,22 +231,34 @@ a, button {
     font-size: 10rem;
     font-weight: 500;
     margin: 0;
+       
  }
 
- .subtitle {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-left: 20px;
-    text-align: center;
- }
+ 
+ .new {
+     text-align: center;
+     &::after {
+        content: '\2014';
+        color: $brend-color;
+       }
+     &__data {
+        font-family: $data-ff;
+        font-size: 1.1rem;
+        color: $brend-color;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+     &__subtitle {
+        font-family: $data-ff;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 20px;
+        line-height: 1.2;
+     }
+       
+    }
 
- .data {
-     font-family: 'Fredoka One', cursive;
-     font-size: 1.5rem;
-     color: red;
-    
- }
+
 
 
 
