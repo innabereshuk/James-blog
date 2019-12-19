@@ -9,6 +9,7 @@
 
 @mixin tr {
     transition: all .4s ease-in;
+    cursor: pointer;
 }
 
 @mixin hover {
@@ -27,8 +28,3 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin textCenter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
