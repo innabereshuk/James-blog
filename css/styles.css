@@ -437,6 +437,17 @@ body {
   grid-template-columns: repeat(4, 275px);
   grid-template-rows: repeat(9, 275px);
   padding: 20px; }
+  .grid:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.2)));
+    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2)); }
   .grid__item--bg {
     grid-column: 1 / 5;
     grid-row: 1 / 3;
@@ -522,13 +533,51 @@ body {
     grid-row: 7 / 9;
     background: #c7c546; }
 
-.image {
-  position: relative; }
-  .image__pos {
+.news {
+  height: 550px; }
+  .news__link {
+    position: relative;
+    color: #fdfdfd;
+    text-align: center;
+    text-decoration: none; }
+  .news__poster {
     position: absolute;
-    width: calc(550px / 2);
-    height: calc(550px / 2);
-    background-size: cover; }
+    height: 550px;
+    width: 550px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; }
+  .news__pic {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-width: 100%; }
+  .news__text {
+    padding-top: 205px;
+    z-index: 2; }
+    .news__text__data {
+      font-family: "Muli", sans-serif;
+      font-weight: 400;
+      line-height: 1.3;
+      font-style: inherit;
+      font-size: 2.1rem;
+      color: #fdfdfd;
+      text-transform: uppercase; }
+    .news__text__subtitle {
+      font-family: "Muli", sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      font-style: inherit;
+      font-size: 3.2rem;
+      color: #fdfdfd; }
 
 .title {
   text-align: center;
@@ -542,11 +591,11 @@ body {
   text-align: center; }
   .new::after {
     content: '\2014';
-    color: #b8310f; }
+    color: #5f2011; }
   .new__data {
     font-family: "Muli", sans-serif;
     font-size: 1.1rem;
-    color: #b8310f;
+    color: #5f2011;
     text-transform: uppercase;
     font-weight: 400; }
   .new__subtitle {
