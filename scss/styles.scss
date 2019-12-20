@@ -27,9 +27,10 @@ body {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    background: #363536;
+    background: #242323;
     position: relative;
-  }
+    opacity: .9;
+   }
 
 .header {
     display: flex;
@@ -48,7 +49,7 @@ body {
         &__btn {
         width: 40px;
         height: 40px;
-        border: $b-size solid rgba($title-color, $alpha: .6);
+        border: $b-size solid rgba($title-color, $alpha: .8);
         background: transparent;
         outline: none;
         cursor: pointer;
@@ -56,7 +57,7 @@ body {
             content: '\2630';
             width: 30px;
             color: $title-color;
-            opacity: .6;
+            opacity: .8;
         }
     }
     &__child {
@@ -72,13 +73,19 @@ body {
             @include tr;
             height: 50px;
             border-bottom: $b-size solid $menu-color;
-            @include font(1.4rem, $menu-color, 400, $text-ff, 1.6);
+            @include font(1.4rem, $text-color, 400, $text-ff, 1.6);
+            background: $menu-color;
+            opacity: .7;
             padding: 15px;
             text-align: center;
-            color: $menu-color;
-            font-weight: 400;
-            font-family: 'Dancing Script';
             text-transform: uppercase;
+            &::after {
+                content: "";
+                display: block;
+                width: 80px;
+                border: .3px solid $title-color;
+                margin: 5px auto;
+            }
         }
     }
 }
@@ -107,7 +114,7 @@ body {
 .fas {
     font-size: 30px;
     color: $title-color;
-    opacity: .7;
+    opacity: .8;
     cursor: pointer;
 }
 
@@ -124,16 +131,16 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 275px);
     grid-template-rows: repeat(9, 275px);
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     z-index: 1;
-    //     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0,0,0,.2));
-    // }
+    // &::before {
+    //      content: '';
+    //      position: absolute;
+    //      top: 0;
+    //      left: 0;
+    //      right: 0;
+    //      bottom: 0;
+    //      z-index: 1;
+    //      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0,0,0,.2));
+    //  }
     padding: 20px;
         &__item {
            &--bg {
@@ -326,14 +333,15 @@ body {
            padding-top: 205px;
             z-index: 2;
             &__data {
-                @include font(2.1rem, $title-color, 400, $data-ff, 1.3);
+                @include font(1.1rem, $title-color, 400, $data-ff, 1.3);
                 text-transform: uppercase;
             }
             &__subtitle {
-                @include font(3.2rem, $title-color, 700, $data-ff, 1.3);
+                @include font(3rem, $title-color, 700, $data-ff, 1.3);
+                padding: 0 10px;
+                max-height: 125px;
+               
             }
-
-           
         }
     }
 
@@ -353,7 +361,8 @@ body {
          width: calc(550px / 2);
          height: calc(550px / 2);
        }   
-}
+    }
+    
 .new {
     text-align: center;
     &::after {
@@ -361,44 +370,33 @@ body {
        color: $brend-color;
       }
     &__data {
-       font-family: $data-ff;
-       font-size: 1.1rem;
-       color: $brend-color;
+       @include font(1.1rem, $brend-color, 400,$data-ff, 1.2);
        text-transform: uppercase;
-       font-weight: 400;
-   }
+     }
     &__subtitle {
-       font-family: $data-ff;
-       font-size: 2.2rem;
-       font-weight: 700;
-       margin: 20px;
-       line-height: 1.2;
+        @include font(2.2rem, $text-color, 700, $text-ff, 1.2);
+        margin: 20px;
         max-width: 220px;
         max-height: 75px;
    }
       
 }
+
       
 .title {
+    @include font(12rem, $title-color, 500, $title-ff, 1.2);
     text-align: center;
-    font-family: 'Dancing Script', cursive;
-    color: white;
-    font-size: 12rem;
-    font-weight: 500;
     margin: 0;
     &--dark {
         color: $text-color;
-        opacity: .5;
-        padding-top: 100px;
-
-}
-       
+        padding-top: 50px;
+    }
 }
 
 .span {
     display: block;
     padding-top: 50px;
-    @include font(1.7rem, #5f5e5f, 400, 'Lora', 1.6);
+    @include font(1.7rem, $span-color, 400, $text-ff, 1.2);
 }
 
 .red {
@@ -406,5 +404,8 @@ body {
     text-decoration: none;
 }
 
+.bon {
+    @include font(3.0rem, $title-color, 100, $text-ff, 1.2);
+}
 
     

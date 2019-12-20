@@ -329,13 +329,14 @@ body {
   line-height: 1.6rem;
   font-style: inherit;
   font-size: 1.4rem;
-  color: #222121; }
+  color: #252525; }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  background: #363536;
-  position: relative; }
+  background: #242323;
+  position: relative;
+  opacity: .9; }
 
 .header {
   display: -webkit-box;
@@ -359,7 +360,7 @@ body {
   .menu__btn {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(253, 253, 253, 0.6);
+    border: 1px solid rgba(253, 253, 253, 0.8);
     background: transparent;
     outline: none;
     cursor: pointer; }
@@ -367,7 +368,7 @@ body {
       content: '\2630';
       width: 30px;
       color: #fdfdfd;
-      opacity: .6; }
+      opacity: .8; }
   .menu__child {
     display: none;
     background: transparent;
@@ -389,13 +390,18 @@ body {
       line-height: 1.6;
       font-style: inherit;
       font-size: 1.4rem;
-      color: #f1cf0b;
+      color: #252525;
+      background: #f1cf0b;
+      opacity: .7;
       padding: 15px;
       text-align: center;
-      color: #f1cf0b;
-      font-weight: 400;
-      font-family: 'Dancing Script';
       text-transform: uppercase; }
+      .menu__child--link::after {
+        content: "";
+        display: block;
+        width: 80px;
+        border: 0.3px solid #fdfdfd;
+        margin: 5px auto; }
 
 .menu:hover .menu__child,
 .menu:focus .menu__child,
@@ -422,7 +428,7 @@ body {
 .fas {
   font-size: 30px;
   color: #fdfdfd;
-  opacity: .7;
+  opacity: .8;
   cursor: pointer; }
 
 .fas:hover,
@@ -662,7 +668,7 @@ body {
       font-weight: 400;
       line-height: 1.3;
       font-style: inherit;
-      font-size: 2.1rem;
+      font-size: 1.1rem;
       color: #fdfdfd;
       text-transform: uppercase; }
     .news__text__subtitle {
@@ -670,8 +676,10 @@ body {
       font-weight: 700;
       line-height: 1.3;
       font-style: inherit;
-      font-size: 3.2rem;
-      color: #fdfdfd; }
+      font-size: 3rem;
+      color: #fdfdfd;
+      padding: 0 10px;
+      max-height: 125px; }
 
 .post {
   height: calc(550px / 2); }
@@ -703,41 +711,54 @@ body {
     color: #a82a0a; }
   .new__data {
     font-family: "Muli", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    font-style: inherit;
     font-size: 1.1rem;
     color: #a82a0a;
-    text-transform: uppercase;
-    font-weight: 400; }
+    text-transform: uppercase; }
   .new__subtitle {
-    font-family: "Muli", sans-serif;
-    font-size: 2.2rem;
+    font-family: "Lora", serif;
     font-weight: 700;
-    margin: 20px;
     line-height: 1.2;
+    font-style: inherit;
+    font-size: 2.2rem;
+    color: #252525;
+    margin: 20px;
     max-width: 220px;
     max-height: 75px; }
 
 .title {
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  color: white;
-  font-size: 12rem;
+  font-family: "Dancing Script", cursive;
   font-weight: 500;
+  line-height: 1.2;
+  font-style: inherit;
+  font-size: 12rem;
+  color: #fdfdfd;
+  text-align: center;
   margin: 0; }
   .title--dark {
-    color: #222121;
-    opacity: .5;
-    padding-top: 100px; }
+    color: #252525;
+    padding-top: 50px; }
 
 .span {
   display: block;
   padding-top: 50px;
-  font-family: "Lora";
+  font-family: "Lora", serif;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.2;
   font-style: inherit;
   font-size: 1.7rem;
-  color: #5f5e5f; }
+  color: #9b9898; }
 
 .red {
   color: #a82a0a;
   text-decoration: none; }
+
+.bon {
+  font-family: "Lora", serif;
+  font-weight: 100;
+  line-height: 1.2;
+  font-style: inherit;
+  font-size: 3rem;
+  color: #fdfdfd; }
