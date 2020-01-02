@@ -20,6 +20,11 @@ body {
     @include font(1.4rem, $text-color,  400, 'Lora', 1.6rem);
 }
 
+a, button {
+    cursor: pointer;
+    transition: all .25s ease-in;
+}
+
 
 .container {
     max-width: 1140px;
@@ -126,289 +131,150 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    min-height: 100%;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(9, 1fr);
     position: relative;
     padding: 20px;
-        &__item {
-           &--bg {
-           grid-column: 1 / 5;
-           grid-row: 1 / 3;
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-position: center;
-           padding-top: 22rem;
-                 &::after {
-                  content: "";
-                  background-image: linear-gradient(to top, rgba(0, 0, 0, .2), rgba(0, 0, 0, .3));
-                  height: 570px;
-                  width: 1140px;
-                  top: 0;
-                  left: 0;
-                  position: absolute;
-              }
+    text-align: center;
+        &--bg {
+            grid-column: span 2;
+            grid-row: span 2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding-top: 20rem;
         }
-        &--pos-1 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            grid-column: 1 / 3;
-            grid-row: 3 / 5;
-            background: rgb(255, 255, 255);
-            &__sub1 {
-                grid-column: 1 / 3;
-                grid-row: 1 / 3;
-            }
-             &__sub2 {
-                 grid-column: 3 / 5;
-                 grid-row: 1 / 3;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 position: relative;
-                 &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    left: 0;
-                    border-top: 25px solid transparent;
-                    border-right: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                    transform: translateX(-30px);
-                }
-               }
-             &__sub3 {
-                 grid-column: 1 / 3;
-                 grid-row: 3 / 5;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-               }
-             &__sub4 {
-                 grid-column: 3 / 5;
-                 grid-row: 3 / 5;
-                 position: relative;
-                 &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    left: 0;
-                    border-top: 25px solid transparent;
-                    border-left: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                    z-index: 1;
-                   transform: translateY(275px / 2 - 25px);
-                }
-            }
+        &__article--sm {
+            grid-column: span 1;
+            grid-row: span 1;
         }
-        &--pos-2 {
-            grid-column: 3 / 5;
-            grid-row: 3 / 5;
-            background: rgb(255, 255, 255);
+        &__article--big {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+        &__footer {
+            grid-column: span 2;
+            grid-row:  span 1;
+            text-align: center;
+        }
+}
 
-        }
-        &--pos-3 {
-            grid-column: 1 / 3;
-            grid-row: 5 / 7;
-            background: rgb(255, 255, 255);
-        }
-        &--pos-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            grid-column: 3 / 5;
-            grid-row: 5 / 7;
-            background: rgb(255, 255, 255);
-            &__sub1 {
-               grid-column: 1 / 3;
-               grid-row: 1 / 3;
-            }
-            &__sub2 {
-                grid-column: 3 / 5;
-                grid-row: 1 / 3;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    right: 0;
-                    border-top: 25px solid transparent;
-                    border-right: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                    transform: translateX(-275px - 20px);
-                    z-index: 1;
-                }
-            }
-            &__sub3 {
-                grid-column: 1 / 3;
-                grid-row: 3 / 5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            &__sub4 {
-                grid-column: 3 / 5;
-                grid-row: 3 / 5;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    right: 0;
-                    border-top: 25px solid transparent;
-                    border-left: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                     transform: translate((-275px + 10px), (275px / 2 - 20px));
-                     z-index: 1;
-                }
-            }
-        }
-        &--pos-5 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            grid-column: 1 / 3;
-            grid-row: 7 / 9;
-            background: rgb(255, 255, 255);
-            &__sub1 {
-                grid-column: 1 / 3;
-                grid-row: 1 / 3;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    left: 0;
-                    border-top: 25px solid transparent;
-                    border-right: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                    transform: translate((275px - 10px), (275px / 2 - 20px));
-                    z-index: 1;
-                }
-           }
-             &__sub2 {
-                 grid-column: 3 / 5;
-                 grid-row: 1 / 3;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 
-                     
-                }
-             &__sub3 {
-                 grid-column: 1 / 3;
-                 grid-row: 3 / 5;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-             }
-             &__sub4 {
-                 grid-column: 3 / 5;
-                 grid-row: 3 / 5;
-                 &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    left: 0;
-                    border-top: 25px solid transparent;
-                    border-left: 30px solid rgba($title-color, $alpha: 1);
-                    border-bottom: 25px solid transparent;
-                    transform: translate((275px + 20px), (275px / 2 - 20px));
-                    z-index: 1;
-                }
-             }
-        }
-        &--pos-6 {
-            grid-column: 3 /5;
-            grid-row: 7 / 9;
-            background: rgb(255, 255, 255);
-        }
-       }
-       &__footer {
-        grid-column: 1 / 5;
-        grid-row: 9 / 10;
-        text-align: center;
-     }
+    
+.post {
+    display: flex;
+    justify-content: center;
+    background: $title-color;
+    &__link{
+        flex-basis: 50%;
+        height: 100%;
     }
+    &__image {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+     &__pic {  
+        @include pCenter;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+    }  
+    
+}
+
+.new {
+flex-basis: 50%;
+text-align: center;
+margin: auto;
+position: relative;
+&--before {
+    &::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 50%;
+    border-top: 25px solid transparent;
+    border-right: 30px solid $title-color;
+    border-bottom: 25px solid transparent;
+    transform: translate(-50%, -50%);
+    }
+}
+&--after {
+    &::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -45px;
+    top: 50%;
+    border-top: 25px solid transparent;
+    border-left: 30px solid $title-color;
+    border-bottom: 25px solid transparent;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+}
+&__text {
+    margin: auto;
+    &::after {
+        content: '\2014';
+        color: $brend-color;
+    }
+}
+&__data {
+   @include font(1.1rem, $brend-color, 400, $data-ff, 1.2);
+   text-transform: uppercase;
+ }
+&__subtitle {
+    @include font(2.2rem, $text-color, 700, $text-ff, 1.2);
+    margin: 20px;
+    max-width: 22rem;
+    max-height: 7.5rem;
+ }
+}
     
     .news {
-         max-width: 55rem;
-         max-height: 55rem;
+         height: 100%;
          &__link {
-            position: relative;
             color: $title-color;
             text-align: center;
             text-decoration: none;
        }
          &__poster {
-            position: absolute;
-            height: 55rem;
-            width: 55rem;
+            position: relative;
+            height: 100%;
             overflow: hidden;
-       }
+         }
         &__pic {
             @include pCenter;
             min-height: 100%;
             min-width: 100%;
+            min-width: 100%;
+            min-height: 100%;
         }
         &__text {
-           padding-top: 20.5rem;
-            z-index: 2;
+            transform: translate(0, -150%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             &__data {
                 @include font(1.1rem, $title-color, 400, $data-ff, 1.3);
                 text-transform: uppercase;
-            }
+             }
             &__subtitle {
                 @include font(3rem, $title-color, 700, $data-ff, 1.3);
                 padding: 0 10px;
-                max-height: 12.5rem;
+                max-height: 18rem;
+                max-width: 50rem;
+                overflow: hidden;
                
             }
         }
     }
-
-.post {
-    height: calc(100% / 2);
-    &__link {
-        @include tr;
-    }
-    &__image {
-        position: relative;
-        width: calc(550px / 2);
-        height: calc(550px / 2);
-        overflow: hidden;
-    }
-    &__pic {  
-        @include pCenter;
-        width: calc(550px / 2);
-        height: calc(550px / 2);
-    }  
-   }
-
-.new {
-    text-align: center;
-    &::after {
-       content: '\2014';
-       color: $brend-color;
-      }
-    &__data {
-       @include font(1.1rem, $brend-color, 400,$data-ff, 1.2);
-       text-transform: uppercase;
-     }
-    &__subtitle {
-        @include font(2.2rem, $text-color, 700, $text-ff, 1.2);
-        margin: 20px;
-        max-width: 220px;
-        max-height: 75px;
-   }
-      
-}
 
 .post__image::after,
 .news__poster::after {
@@ -420,6 +286,32 @@ body {
     position: absolute;
     width: 100%;
 }
+
+.post__link:hover img,
+.news__link:hover img,
+.post__link:focus img,
+.news__link:focus img,
+.post__link:active img,
+.news__link:active img {
+    transform: translate(-50%, -50%) scale(1.05);
+    @include tr;
+}
+
+.post__link:hover .post__image::after,
+.news__link:hover .news__poster::after,
+.post__link:focus .post__image::after,
+.news__link:focus .news__poster::after,
+.post__link:active .post__image::after,
+.news__link:active .news__poster::after {
+    content: "";
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    @include tr;
+} 
 
       
 .title {
@@ -444,7 +336,9 @@ body {
 }
 
 .bon {
+    display: block;
     @include font(3.0rem, $title-color, 100, $text-ff, 1.2);
+    margin-top: 5rem;
 }
 
 
