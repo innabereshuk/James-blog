@@ -131,7 +131,8 @@ a, button {
 
 .grid {
     display: grid;
-    min-height: 100%;
+    min-width: 100%;
+    height: auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(9, 1fr);
     position: relative;
@@ -168,7 +169,7 @@ a, button {
     background: $title-color;
     &__link{
         flex-basis: 50%;
-        height: 100%;
+        // height: 100%;
     }
     &__image {
         position: relative;
@@ -177,9 +178,10 @@ a, button {
     }
      &__pic {  
         @include pCenter;
+        width: 100%;
+        height: auto;
         min-width: 100%;
         min-height: 100%;
-        width: 100%;
     }  
     
 }
@@ -238,7 +240,7 @@ position: relative;
 }
     
     .news {
-         height: 100%;
+        max-height: 100%;
          &__link {
             color: $title-color;
             text-align: center;
@@ -246,7 +248,7 @@ position: relative;
        }
          &__poster {
             position: relative;
-            height: 100%;
+            min-height: 100%;
             overflow: hidden;
          }
         &__pic {
@@ -340,6 +342,7 @@ position: relative;
     @include font(3.0rem, $title-color, 100, $text-ff, 1.2);
     margin-top: 5rem;
 }
+
 
 
     
